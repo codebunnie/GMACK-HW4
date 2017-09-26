@@ -2,9 +2,14 @@
 /* Gabrielle Mack - Homework # 4 - IS 601 - Fall 2017 */
 
   $obj = new main();
-  
-  $array = array(9,4,3,6,7,2,8,9,1,2,1,);
-  
+  /*
+  =================================================================================
+  =================================================================================
+  ====================================ARRAY========================================
+  =================================================================================
+  =================================================================================
+  */
+  $array = array(9,4,3,6,7,2,8,9,1,2,1,);  
   $multiArray = array(
   array("IS", 601, "Web Systems Development"),
   array("IS", 631, "Enterprise Database Management"),
@@ -26,6 +31,7 @@
   $obj->search_array($schedule1);
   $obj->multiply_array($array);
   $obj->replace_array($schedule1, $schedule2);
+  $obj->shuffle_array($schedule1);
   
   class main {
 
@@ -255,8 +261,39 @@
 			echo '<hr>';
 			
 			}
-	
 		
+			public function shuffle_array($schedule1){
+			echo '<i><b>Function Name:</b>[10] shuffle_array()</br> <b>Array Function:</b> shuffle()</i> <hr></br>';
+			
+			 sort($schedule1, $sort_flags = SORT_STRING); 
+			echo 'Sorted Array:  <br>';
+			foreach($schedule1 as $key => $value){
+				echo "Index/Key: [$key]  Value: [$value]<br />\n";
+			}
+			shuffle($schedule1);
+			 echo '<br> Shuffled Array: </br>'; 	
+			foreach($schedule1 as $key => $value){
+				echo "Index/Key: [$key]  Value: [$value]<br />\n";
+			}
+			echo '<hr>';
+			}
+			
+	 /*
+  =================================================================================
+  =================================================================================
+  ==================================END ARRAY======================================
+  =================================================================================
+  =================================================================================
+  */		
+		
+	
+
+
+
+
+
+
+	
 	 
 } /*main brace */
   
