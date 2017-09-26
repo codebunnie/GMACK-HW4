@@ -22,6 +22,7 @@
   $obj->remove_duplicates($array, $multiArray);
   $obj->count_array($array, $multiArray);
   $obj->diff_array($schedule1, $schedule2);
+  $obj->merge_array($schedule1, $schedule2);
 
   
   class main {
@@ -183,12 +184,28 @@
 				echo "[$key] [$value] &nbsp";
 			}
 			$result = array_diff($schedule1, $schedule2);
-			echo '<br>Array Differences:  ';
+			echo '<br><br>Array Differences:  ';
 			foreach($result as $key => $value){
 				echo "[$key] [$value] &nbsp";
 			}
+			echo '<hr>';
 		}	
-			
+			public function merge_array($schedule1, $schedule2){
+			echo '<i><b>Function Name:</b>[6] merge_array()</br> <b>Array Function:</b> merge_array()</i> <hr></br>';
+			echo 'Schedule1: ';
+			foreach($schedule1 as $key => $value){
+				echo "[$key] [$value] &nbsp";
+			}
+			echo '</br>Schedule2: ';
+			foreach($schedule2 as $key => $value){
+				echo "[$key] [$value] &nbsp";
+			}
+			$result = array_merge($schedule1, $schedule2);
+			echo '<br><br>Merged Array:  </br>';
+			foreach($result as $key => $value){
+				echo "Index/Key: [$key]  Value: [$value]<br />\n";
+			}
+		}	
 			
 			
 			
