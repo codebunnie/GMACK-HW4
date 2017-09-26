@@ -14,10 +14,14 @@
   array("IS", 631, "Enterprise Database Management")  
   );
   
+  $schedule1= array("IS601", "IS631","CS602", "MGMT665", "CS631", "CS601");
+  $schedule2= array("IS601", "IS631","CS630", "MGMT665", "CS631", "CS608");
+  
   $obj->print_array($array, $multiArray);
   $obj->sort_array($array, $multiArray);
   $obj->remove_duplicates($array, $multiArray);
   $obj->count_array($array, $multiArray);
+  $obj->diff_array($schedule1, $schedule2);
 
   
   class main {
@@ -151,7 +155,8 @@
 					 
 			 foreach(array_count_values($array) as $key => $value){
 				echo "Index/Key: [$key]  Value: [$value]<br />\n";
-			}			
+			}	
+				echo '<hr>';
 			/*
 			
 			$x=count($multiArray);
@@ -167,7 +172,22 @@
 			}	*/
 			
 		}
-			
+		public function diff_array($schedule1, $schedule2){
+			echo '<i><b>Function Name:</b>[5] diff_array()</br> <b>Array Function:</b> array_diff()</i> <hr></br>';
+			echo 'Schedule1: ';
+			foreach($schedule1 as $key => $value){
+				echo "[$key] [$value] &nbsp";
+			}
+			echo '</br>Schedule2: ';
+			foreach($schedule2 as $key => $value){
+				echo "[$key] [$value] &nbsp";
+			}
+			$result = array_diff($schedule1, $schedule2);
+			echo '<br>Array Differences:  ';
+			foreach($result as $key => $value){
+				echo "[$key] [$value] &nbsp";
+			}
+		}	
 			
 			
 			
