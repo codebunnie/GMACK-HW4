@@ -45,7 +45,8 @@
   $obj->implode_array($phoneArray);
   $obj->replace_string();
   $obj->word_count();
-  
+  $obj->string_split();
+  $obj->char_count();
   
   
   class main {
@@ -352,9 +353,43 @@
 		echo 'Phrase is the following: <br><br>'.$phrase;
 		$word_count=str_word_count($phrase);
 		echo 'Total Word Count for Phrase is: '.$word_count;
+		echo '<br><br><hr>';
+		
 	}
 		
+		public function string_split()
+	{
+		echo '<i><b>Function Name:</b>[14] string_split()</br> <b>String Function:</b> str_split()</i> <hr></br>';
 		
+		$phrase ="9174432245895658745958974569879785698458";
+		echo "Orginal Phrase: ".$phrase.'<br><br>';
+		
+		$phraseArray = str_split($phrase, 10);
+		echo 'New Array: <br>';
+		foreach($phraseArray as $key => $value){
+					echo "[$key] [$value] <br>";
+				}
+		
+		echo '<br><br><hr>';	
+		
+	}
+			
+		
+		public function char_count()
+	{
+		echo '<i><b>Function Name:</b>[15] char_count()</br> <b>String Function:</b> count_chars()</i> <hr></br>';
+		
+		$phrase ="PHP is a server-side scripting language designed primarily for web development but also used as a general-purpose programming language. Originally created by Rasmus Lerdorf in 1994,[4] the PHP reference implementation is now produced by The PHP Development Team.[5] PHP originally stood for Personal Home Page,[4] but it now stands for the recursive acronym PHP: Hypertext Preprocessor.[6]<br><br>";
+		echo 'Phrase is the following: <br><br>'.$phrase;
+		
+		echo 'Total Character Count for Phrase is: <br><br>';
+		foreach (count_chars($phrase, 1) as $i => $val) {
+		echo "There were $val instance(s) of \"" , chr($i) , "\" in the string.\n<br><br>";
+		}
+		echo '<br><br><hr>';
+	}
+	
+	
 		
 	
 	
