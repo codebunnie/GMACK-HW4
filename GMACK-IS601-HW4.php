@@ -25,7 +25,7 @@
   $obj->merge_array($schedule1, $schedule2, $multiArray);
   $obj->search_array($schedule1);
   $obj->multiply_array($array);
-
+  $obj->replace_array($schedule1, $schedule2);
   
   class main {
 
@@ -221,8 +221,7 @@
 			echo 'First instance for "CS602" in $schedule1:  ['.array_search('CS602', $schedule1).']'; 
 			echo '<hr>';
 					} 
-					
-					
+									
 			public function multiply_array($array){
 			echo '<i><b>Function Name:</b>[8] multiply_array()</br> <b>Array Function:</b> product_array()</i> <hr></br>';
 			echo 'Array Values: <br><br>';
@@ -234,10 +233,29 @@
 			echo '<hr>';
 			}
 			
+			public function replace_array($schedule1, $schedule2){
+			echo '<i><b>Function Name:</b>[9] replace_array()</br> <b>Array Function:</b> array_replace()</i> <hr></br>';
+			echo 'Schedule1: ';
+			foreach($schedule1 as $key => $value){
+				echo "[$key] [$value] &nbsp";
+			}
+			echo '</br>Schedule2: ';
+			foreach($schedule2 as $key => $value){
+				echo "[$key] [$value] &nbsp";
+			}
+			echo '<br><br>Replace the elements in $schedule1 with the elements in $schedule2 <br>';
 			
-		
+			$result = array_replace($schedule1, $schedule2);
+			
+			echo 'Replaced Schedule1: ';
+			
+			foreach($result as $key => $value){
+				echo "[$key] [$value] &nbsp";
+			}
+			echo '<hr>';
+			
+			}
 	
-		
 		
 	 
 } /*main brace */
