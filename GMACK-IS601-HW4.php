@@ -22,7 +22,9 @@
   $obj->remove_duplicates($array, $multiArray);
   $obj->count_array($array, $multiArray);
   $obj->diff_array($schedule1, $schedule2);
-  $obj->merge_array($schedule1, $schedule2);
+  $obj->merge_array($schedule1, $schedule2, $multiArray);
+  $obj->search_array($schedule1);
+  $obj->multiply_array($array);
 
   
   class main {
@@ -190,7 +192,7 @@
 			}
 			echo '<hr>';
 		}	
-			public function merge_array($schedule1, $schedule2){
+			public function merge_array($schedule1, $schedule2, $multiArray){
 			echo '<i><b>Function Name:</b>[6] merge_array()</br> <b>Array Function:</b> merge_array()</i> <hr></br>';
 			echo 'Schedule1: ';
 			foreach($schedule1 as $key => $value){
@@ -202,11 +204,35 @@
 			}
 			$result = array_merge($schedule1, $schedule2);
 			echo '<br><br>Merged Array:  </br>';
+			
 			foreach($result as $key => $value){
 				echo "Index/Key: [$key]  Value: [$value]<br />\n";
+			}			
+			echo ' <hr> ';		
 			}
-		}	
 			
+			public function search_array($schedule1){
+			echo '<i><b>Function Name:</b>[7] search_array()</br> <b>Array Function:</b> array_search()</i> <hr></br>';
+			echo 'Schedule1: ';
+			foreach($schedule1 as $key => $value){
+				echo "[$key] [$value] &nbsp";
+			}
+			echo '<BR>Search String: "CS602"<br>';
+			echo 'First instance for "CS602" in $schedule1:  ['.array_search('CS602', $schedule1).']'; 
+			echo '<hr>';
+					} 
+					
+					
+			public function multiply_array($array){
+			echo '<i><b>Function Name:</b>[8] multiply_array()</br> <b>Array Function:</b> product_array()</i> <hr></br>';
+			echo 'Array Values: <br><br>';
+			foreach($array as $key => $value){
+			echo "Index/Key: [$key]  Value: [$value]<br />\n";
+			}
+			echo '<br>Array Product is: '.array_product($array).'<br>';
+			
+			echo '<hr>';
+			}
 			
 			
 		
