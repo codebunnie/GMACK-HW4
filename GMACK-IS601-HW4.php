@@ -17,6 +17,7 @@
   $obj->print_array($array, $multiArray);
   $obj->sort_array($array, $multiArray);
   $obj->remove_duplicates($array, $multiArray);
+  $obj->count_array($array, $multiArray);
 
   
   class main {
@@ -141,8 +142,38 @@
 			
 				}
 			}			
-					
+		echo '<hr>';			
 		}
+		
+		public function count_array($array, $multiArray)
+		{
+			echo '<i><b>Function Name:</b>[4] count_array()</br> <b>Array Function:</b> array_count_values()</i> <hr></br>';
+					 
+			 foreach(array_count_values($array) as $key => $value){
+				echo "Index/Key: [$key]  Value: [$value]<br />\n";
+			}			
+			/*
+			
+			$x=count($multiArray);
+						
+			for ($row = 0; $row < $x; $row++) {
+			
+				echo '</br>Row/Index  '. $row. '&nbsp';
+			
+				for ($col = 0; $col < 3; $col++) {
+					echo 'Count:'.(array_count_values($multiArray[$x]));
+			
+				}
+			}	*/
+			
+		}
+			
+			
+			
+			
+			
+		
+	
 		
 		
 	 
