@@ -32,6 +32,7 @@
   $obj->multiply_array($array);
   $obj->replace_array($schedule1, $schedule2);
   $obj->shuffle_array($schedule1);
+
   
    /*
   =================================================================================
@@ -40,8 +41,10 @@
   =================================================================================
   =================================================================================
   */
-  $phoneArray = array('9174432245','8956587459', '5897456987', '97856984587');
+  $phoneArray = array('9174432245','8956587459', '5897456987', '9785698458');
   $obj->implode_array($phoneArray);
+  $obj->replace_string();
+  $obj->word_count();
   
   
   
@@ -293,10 +296,9 @@
 
 
 
-	public function implode_array($string)
+	public function implode_array($phoneArray)
 	{
-	$phoneArray = array('9174432245','8956587459', '5897456987', '9785698587');
-	echo '<i><b>Function Name:</b>[1] implode_array()</br> <b>String Function:</b> implode()</i> <hr></br>';
+	echo '<i><b>Function Name:</b>[11] implode_array()</br> <b>String Function:</b> implode()</i> <hr></br>';
 
 	echo 'Current Contents of Phone Array: <br>';
 	foreach($phoneArray as $key => $value){
@@ -306,12 +308,55 @@
 	echo '<br>Imploded Contents: <br>';
 	$results = implode("<br>   ",$phoneArray);
 	print_r($results);
+	echo '<br><br><hr>';
 
 	}
 
+	/*
+	public function substring($phoneArray)
+	{
+		echo '<i><b>Function Name:</b>[12] substring()</br> <b>String Function:</b> substr()</i> <hr></br>';
+		
+		foreach($phoneArray as $key => $value){
+					echo "[$key] [$value] <br>";
+				}		
+		
+		echo ' <br><br>Print Implode <br>';
+		$results = implode($phoneArray);
+		$results = chunk_split($results, $chunklen = 10, $end = "--");
+		
+		
+		print_r($results);		
+		
+		echo ' <br><br>Print SubStr <br>';			
+		echo '('.substr($results, 0, 3).') '.substr($results, 3, 3).'-'.substr($results,6);
+		
+		
+	}
+*/
+	public function replace_string()
+	{
+		echo '<i><b>Function Name:</b>[12] replace_string()</br> <b>String Function:</b> str_replace()</i> <hr></br>';
+		$phrase = "And the very next day, everything broke!";
+		echo 'Original Phrase: '.$phrase.'<br>';
+		$results =str_replace("day", "week", $phrase);
+		echo 'Replaced Phrase: '.$results;
+		echo '<br><br><hr>';
+	}
 	
-
-
+		public function word_count()
+	{
+		echo '<i><b>Function Name:</b>[13] word_count()</br> <b>String Function:</b> str_word_count()</i> <hr></br>';
+		
+		$phrase ="PHP is a server-side scripting language designed primarily for web development but also used as a general-purpose programming language. Originally created by Rasmus Lerdorf in 1994,[4] the PHP reference implementation is now produced by The PHP Development Team.[5] PHP originally stood for Personal Home Page,[4] but it now stands for the recursive acronym PHP: Hypertext Preprocessor.[6]<br><br>";
+		echo 'Phrase is the following: <br><br>'.$phrase;
+		$word_count=str_word_count($phrase);
+		echo 'Total Word Count for Phrase is: '.$word_count;
+	}
+		
+		
+		
+	
 	
 	 
 } /*main brace */
