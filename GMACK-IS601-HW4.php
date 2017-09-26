@@ -12,7 +12,8 @@
   array("IS", 661, "User Experience Design")  
   );
   
-  $obj->printarray($array, $multiArray);
+  $obj->print_array($array, $multiArray);
+  $obj->sort_array($array, $multiArray);
 
   
   class main {
@@ -21,8 +22,8 @@
 		echo '<h1>IS601 - Homework # 4 </br> Author: Gabrielle Mack</h1> <hr>';     
     }
 	
-		public function printarray($array, $multiArray){
-		echo '<i><b>Function Name:</b> print_array</br> <b>Array Function:</b> array_values</i> <hr></br>';
+		public function print_array($array, $multiArray){
+		echo '<i><b>Function Name:</b>[1] print_array</br> <b>Array Function:</b> array_values</i> <hr></br>';
 		
 		print_r(array_values($array));
 		echo '</br></br> Or Alternatively, a more readable format would be to loop through each element and add some formatting </br></br>';
@@ -34,7 +35,7 @@
 		echo '</br></br> The same function can be used for 2 Dimensional arrays ...But still isnt that readable </br></br>';
 		print_r(array_values($multiArray));
 		
-		echo '</br>So we loop through each row and column and add some formatting </br></br>';
+		echo '</br></br>So we loop through each row and column and add some formatting </br></br>';
 		
 		for ($row = 0; $row < 4; $row++) {
 			
@@ -47,8 +48,59 @@
 		}
 		echo '<hr>'; 
 		}
+		
+		public function sort_array($array, $multiArray){
+			echo '<i><b>Function Name:</b>[2] sort_array()</br> <b>Array Function:</b> sort()</i> <hr></br>';
+			echo '<b>Info Before Sort:</b> </br>';
+			foreach($array as $key => $value){
+				echo "Index/Key: [$key]  Value: [$value]<br />\n";
+			}
+			
+			echo '</br> <b>Info After Sort:</b> </br>';
+			
+			 sort($array, $sort_flags = SORT_STRING); 
+			
+			foreach($array as $key => $value){
+				echo "Index/Key: [$key]  Value: [$value]<br />\n";
+			}
+			
+			echo '</br><b>Info Before Sort:</b>';
+			for ($row = 0; $row < 4; $row++) {
+			
+			echo '</br>Row/Index  '. $row. '&nbsp';
+			
+			for ($col = 0; $col < 3; $col++) {
+			echo " ".$multiArray[$row][$col]." ";
+			
+			}
+		}
+			
+			
+			
+			echo '</br></br> <b>Info After Sort:</b>';
+			sort($multiArray, $sort_flags = SORT_NUMERIC);
+			
+			for ($row = 0; $row < 4; $row++) {
+			
+			echo '</br>Row/Index  '. $row. '&nbsp';
+			
+			for ($col = 0; $col < 3; $col++) {
+			echo " ".$multiArray[$row][$col]." ";
+			
+			}
+		}
+		
+			echo'</br></br> Note: This function sorts by value and reorders the key/index pairs. <hr>';
+			
+			
+		}
+		
+		
+		
+		
+		
 	 
-}
+} /*main brace */
   
 	
 
