@@ -49,7 +49,7 @@
   $obj->char_count();
   $obj->tag_strip();
   $obj->string_length();
-  
+  $obj->compare_strings();
   
   class main {
 
@@ -434,6 +434,21 @@
 	
 	}
 	 
+	public function compare_strings()
+	{
+		echo '<i><b>Function Name:</b>[18] compare_strings()</br> <b>String Function:</b> strcmp()</i> <hr></br>'; 
+		
+		$str1 = 'Pretty Sure This is how it should work....ooooor not';
+		$str2 = 'Pretty Sure This is how it should work....ooooor maybe not';
+		echo "String1 : ".$str1."<br><br>";
+		echo "String2 : ".$str2."<br><br>";
+		
+		echo "Boolean if strings are equal: ". strcmp($str1,$str2);
+		echo "<br><br><hr>";
+	}
+		
+	
+		
 } /*main brace */
   
 	
