@@ -47,6 +47,7 @@
   $obj->word_count();
   $obj->string_split();
   $obj->char_count();
+  $obj->tag_strip();
   
   
   class main {
@@ -386,9 +387,38 @@
 		foreach (count_chars($phrase, 1) as $i => $val) {
 		echo "There were $val instance(s) of \"" , chr($i) , "\" in the string.\n<br><br>";
 		}
-		echo '<br><br><hr>';
+		echo '<hr>';
 	}
 	
+	public function tag_strip()
+	{
+		echo '<i><b>Function Name:</b>[16] tag_strip()</br> <b>String Function:</b> strip_tags()</i> <hr></br>';
+		$phrase='"\n
+		<code>
+		<!DOCTYPE html>
+		
+		<html>
+		<body>
+		echo <h2>PHP is Fun!</h2>;
+		echo Hello world!<br>
+		echo Im about to learn PHP!<br>;
+	
+		</body>
+		</html></code>"' ;
+		
+		echo "Code To Be Stripped: <br><br>";
+		
+		echo htmlentities($phrase);
+		
+		echo "Stipped Code:  </br>";
+		
+		$result=strip_tags($phrase);
+		
+		echo $phrase;
+		
+		echo "<br><br><hr>"
+		
+	}
 	
 		
 	
