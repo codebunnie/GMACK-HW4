@@ -48,6 +48,7 @@
   $obj->string_split();
   $obj->char_count();
   $obj->tag_strip();
+  $obj->string_length();
   
   
   class main {
@@ -410,19 +411,28 @@
 		
 		echo htmlentities($phrase);
 		
-		echo "Stipped Code:  </br>";
+		echo "<br><br>Stripped Code:  </br>";
 		
 		$result=strip_tags($phrase);
 		
 		echo $phrase;
 		
-		echo "<br><br><hr>"
-		
+		echo "<br><br><hr>";
+	
 	}
 	
+	public function string_length()
+	{
+		echo '<i><b>Function Name:</b>[17] string_length()</br> <b>String Function:</b> strlen()</i> <hr></br>';
+		$phrase ="PHP is a server-side scripting language designed primarily for web development but also used as a general-purpose programming language. Originally created by Rasmus Lerdorf in 1994,[4] the PHP reference implementation is now produced by The PHP Development Team.[5] PHP originally stood for Personal Home Page,[4] but it now stands for the recursive acronym PHP: Hypertext Preprocessor.[6]<br><br>";
 		
+		echo "Current Phrase: <br><br>";
+		echo $phrase;
+		$result = strlen($phrase);
+		echo "String Length: ".$result;
+		echo "<br><br><hr>";
 	
-	
+	}
 	 
 } /*main brace */
   
