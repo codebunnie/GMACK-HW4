@@ -50,6 +50,8 @@
   $obj->tag_strip();
   $obj->string_length();
   $obj->compare_strings();
+  $obj->string_md5();
+  $obj->string_sha1();
   
   class main {
 
@@ -445,6 +447,30 @@
 		
 		echo "Boolean if strings are equal: ". strcmp($str1,$str2);
 		echo "<br><br><hr>";
+	}
+	
+	public function string_md5()
+	{
+		echo '<i><b>Function Name:</b>[19] string_md5()</br> <b>String Function:</b> md5()</i> <hr></br>'; 
+		
+		$str="iCanHazCheezBurger";
+		echo "String to Hash: " .$str."<br><br>";
+		$result=md5($str);
+		echo "Hashed String: ".$result."<br><br>";
+		
+		echo "<br><br><hr>";	
+	}
+	
+	public function string_sha1()
+	{
+		echo '<i><b>Function Name:</b>[20] string_sha1()</br> <b>String Function:</b> sha1()</i> <hr></br>'; 
+		
+		$str="iCanHazCheezBurger";
+		echo "String to Hash: " .$str."<br><br>";
+		$result=sha1($str);
+		echo "Hashed String: ".$result."<br><br>";
+		
+		echo "<br><br><hr>";	
 	}
 		
 	
